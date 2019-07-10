@@ -18,7 +18,7 @@ import persistencia.ConexaoBanco;
  * @author Alunos
  */
 public class MedicoDao {
- public void cadastrarMedico(Medico pVO) throws SQLException {
+ public void cadastrarMedico(Medico med) throws SQLException {
 
         //Buscando uma conexão com o Banco de Dados
         Connection con = ConexaoBanco.getConexao();
@@ -31,9 +31,9 @@ public class MedicoDao {
             String sql;
 
             /* Montando a instrução INSERT para inserir
-             um objeto pVO no Banco MySQL */
+             um objeto medico no Banco MySQL */
             sql = "insert into medico(crm,nome,especialidade)"
-                    + "values( '" + pVO.getCrm() + "','" + pVO.getNome() + "', '" + pVO.getEspecialidade() + "')";
+                    + "values( '" + med.getCrm() + "','" + med.getNome() + "', '" + med.getEspecialidade() + "')";
 
             //Executando o sql
             stat.execute(sql);
@@ -79,7 +79,7 @@ public class MedicoDao {
                 m.setNome(rs.getString("nome"));
                 m.setEspecialidade(rs.getString("especialidade"));
 
-                /* Inserindo o objeto pVO no ArrayList */
+                /* Inserindo o objeto med no ArrayList */
                 prod.add(m);
             }//fecha while
 

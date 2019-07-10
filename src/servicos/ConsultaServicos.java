@@ -13,16 +13,13 @@ import java.util.ArrayList;
 import modelo.Consulta;
 import modelo.Medico;
 
-/**
- *
- * @author Alunos
- */
+
 public class ConsultaServicos {
     
     public void cadastrarConsulta(Consulta pVO) throws SQLException {
         ConsultaDao cDao = DaoFactory.getConsultaDao();
         cDao.cadastrarConsulta(pVO);
-    }//fecha método
+    }
 
     /**
      * @return Retornando um Array contendo todos os produtos do banco de dados.

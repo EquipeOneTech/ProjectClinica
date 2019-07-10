@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package persistencia;
 
 import java.sql.Connection;
@@ -25,7 +22,7 @@ public class ConexaoBanco {
             throw new SQLException("Erro ao conectar! " + se.getMessage());
         }//fecha catch
         return c;
-    }//fecha metodo
+    }
     
-}//fecha classe
+}
 

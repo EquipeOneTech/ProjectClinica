@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package visual;
 
 import java.util.ArrayList;
@@ -12,10 +8,7 @@ import modelo.Consulta;
 import servicos.ConsultaServicos;
 import servicos.ServicosFactory;
 
-/**
- *
- * @author Alunos
- */
+
 public class Janela6 extends javax.swing.JInternalFrame {
 DefaultTableModel dtm = new DefaultTableModel(
             new Object[][]{},

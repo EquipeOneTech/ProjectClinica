@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package servicos;
 
 import dao.DaoFactory;
@@ -11,10 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import modelo.Paciente;
 
-/**
- *
- * @author Alunos
- */
+
 public class PacienteServicos {
     public void cadastrarPaciente(Paciente pVO) throws SQLException {
       PacienteDao pDAO = DaoFactory.getPacienteDao();
@@ -28,5 +21,5 @@ public class PacienteServicos {
     public ArrayList<Paciente> buscarPaciente() throws SQLException {
         PacienteDao pDao = DaoFactory.getPacienteDao();
         return pDao.buscarPaciente();
-    }//fecha método
+    }
 }

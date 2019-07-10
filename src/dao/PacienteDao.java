@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package dao;
 
 import java.sql.Connection;
@@ -14,12 +10,8 @@ import modelo.Medico;
 import modelo.Paciente;
 import persistencia.ConexaoBanco;
 
-/**
- *
- * @author Alunos
- */
 public class PacienteDao {
-     public void cadastrarPaciente(Paciente pVO) throws SQLException {
+     public void cadastrarPaciente(Paciente pac) throws SQLException {
 
         //Buscando uma conexão com o Banco de Dados
         Connection con = ConexaoBanco.getConexao();
@@ -34,7 +26,7 @@ public class PacienteDao {
             /* Montando a instrução INSERT para inserir
              um objeto pVO no Banco MySQL */
             sql = "insert into paciente(matricula,nome_paciente,telefone)"
-                    + "values( null,'" + pVO.getNome() + "','" + pVO.getTelefone() + "')";
+                    + "values( null,'" + pac.getNome() + "','" + pac.getTelefone() + "')";
 
             //Executando o sql
             stat.execute(sql);
@@ -75,7 +67,7 @@ public class PacienteDao {
                 Paciente p = new Paciente();
 
                 /* Mapeando a tabela do banco para objeto
-                 chamado pVO */
+                 chamado pac */
                 p.setMatricula(rs.getInt("matricula"));
                 p.setNome(rs.getString("nome_paciente"));
                 p.setTelefone(rs.getString("telefone"));
