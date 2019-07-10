@@ -11,7 +11,7 @@ import modelo.Medico;
 import persistencia.ConexaoBanco;
 
 public class ConsultaDao {
-     public void cadastrarConsulta(Consulta pVO) throws SQLException {
+     public void cadastrarConsulta(Consulta consult) throws SQLException {
 
         //Buscando uma conexão com o Banco de Dados
         Connection con = ConexaoBanco.getConexao();
@@ -26,7 +26,7 @@ public class ConsultaDao {
             /* Montando a instrução INSERT para inserir
              um objeto pVO no Banco MySQL */
             sql = "insert into consulta(codigo,dataConsulta,hora,crm_medico,matricula_paciente)"
-                    + "values( null,'" + pVO.getData() + "','" + pVO.getHora() + "', '" + pVO.getCrm() + "','"+ pVO.getMatricula() +"')";
+                    + "values( null,'" + consult.getData() + "','" + consult.getHora() + "', '" + consult.getCrm() + "','"+ consult.getMatricula() +"')";
 
             //Executando o sql
             stat.execute(sql);
